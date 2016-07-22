@@ -88,6 +88,14 @@ THE SOFTWARE.
      });
    }
 
+   function addMouseLeave(d,i){
+     d3.select(this).attr({
+       fill:"red",
+       r:radius
+     });
+
+   }
+
    function add_structures() {
        console.log('Loading structures');
        d3.select('#map_container')
