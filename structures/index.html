@@ -72,6 +72,21 @@ THE SOFTWARE.
    function remove_compartment(met_id) {
        return met_id.replace(/_[a-z][a-z0-9]?$/, '');
    }
+   //Event handlers for carbon circles
+/*   function addMouseOver(d,i){
+      d3.select(this).attr({
+        r: radius *2
+        fill: "red"
+      })
+   } */
+
+   //function used to add mouse over functionality
+   function addMouseOver(d,i) {
+     d3.select(this).attr({
+       fill: "red",
+       r: radius*2
+     });
+   }
 
    function add_structures() {
        console.log('Loading structures');
@@ -87,14 +102,33 @@ THE SOFTWARE.
              var circle = d3.select(this),
                  transform = d3.transform(circle.attr('transform'));
 
+          /*   var canvas = d3.select("body")
+                          .append("svg")
+                          .attr("width", 500)
+                          .attr("height",500); */
+          /*    var circle3 = canvas.append("circle")
+                          .attr("cx", 30)
+                          .attr("cy", 30)
+                          .attr("r", 50)
+                          .attr("fill", "red")
+                              */
 
               var circle2 = d3.select(circle.node().parentNode).selectAll("circle")
               .data([31, 32, 33, 34, 35, 36], function(d) { return d; });
 
+
+
+
+
               circle2.enter().append("circle")
               .attr("cy", 60)
               .attr("cx", function(d, i) { return i * 100 + 30; })
+              .style("fill","red")
+              .on("mouseover",addMouseOver) //doesn't work
               .attr("r", 30);
+
+              //.attr("fill","red")
+              //d3.select(circle.node().parentNode).datum(31)
 
 
               circle2.exit().remove();
