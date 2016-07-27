@@ -72,6 +72,11 @@ svg.escher-svg .carbon-circle{
   fill: rgb(224, 134, 91);
 }
 
+svg.escher-svg g.selected .carbon-circle{
+  stroke: rgb(5, 2, 0):
+
+}
+
 svg.escher-svg .segment {
   stroke: #334E75;
   stroke-width: 10px;
