@@ -129,16 +129,16 @@ THE SOFTWARE.
               .attr("cy", 60)
               .attr("cx", function(d, i) { return i * 100 + 30; })
               .style("fill","red")
-              .on("mouseover", function(){
+              .on("mouseover",function(){
                 console.log(this);
-                console.log(d3.select(this));
-                d3.select(this).style("fill", "white");})
-              }) //doesn't work
+                console.log(d3.select(this)); //doesn't work
+                d3.select(this).style("fill","red");})
               .attr("r", 30);
+              
 
 
-              //parent.selectAll('.metabolite-circle').attr('fill', function (d, i) { return d === 31 ? 'green' : null })
-
+              parent.selectAll('.metabolite-circle').attr('fill', function (d, i) { return d === 31 ? 'green' : null })
+ ,t a
               //.attr("fill","red")
               //d3.select(circle.node().parentNode).datum(31)
 
